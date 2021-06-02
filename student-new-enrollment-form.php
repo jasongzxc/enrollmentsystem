@@ -96,14 +96,14 @@
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">School Last Attended: </span>
                 <div class="form-group col-md-9">
-                <input type="text" name="schoollastattended" class="form-control">
+                <input type="text" name="schoollastattended" class="form-control <?php echo (!empty($schoolLastAttendedError)) ? 'border border-danger' : ''; ?>" value="<?php echo $schoolLastAttended; ?>">
                 </div>
             </div>
 
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">School Address: </span>
                 <div class="form-group col-md-9">
-                <input type="text" name=""class="form-control">
+                <input type="text" name="schooladdress" class="form-control <?php echo (!empty($schoolAddressError)) ? 'border border-danger' : ''; ?>" value="<?php echo $schoolAddress; ?>"> 
                 </div>
             </div>
 

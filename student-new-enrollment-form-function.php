@@ -4,8 +4,11 @@
     $lastName = $firstName = $middleName = $homeAddress = $contactNumber = $birthday = $birthPlace = $gender = "";
     //General Student Information Error Variables
     $lastNameError = $firstNameError = $middleNameError = $homeAddressError = $contactNumberError = $birthdayError = $birthPlaceError = $genderError = "";
+
     //Educational Information
     $schoolLastAttended = $schoolAddress = $trackAndStrand = $yearGraduated = $courseThisComingSY = "";
+    //Educational Information Error Variables
+    $schoolLastAttendedError = $schoolAddressError = $trackAndStrandError = $yearGraduatedError = $courseThisComingSYError = "";
 
 
     function dataValidation($data){
@@ -17,7 +20,8 @@
 
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        //General Student Information Validations
+
+        //General Student Information Validations==============================================================================
         if(!empty($_POST['lastname'])) {
             $lastName = dataValidation($_POST['lastname']);
         } else {
@@ -74,6 +78,20 @@
             $gender = $selectGender;
             break;
         }
+
+        //General Student Information Validations==============================================================================================
+        if(!empty($_POST['schoollastattended'])) {
+            $schoolLastAttended = dataValidation($_POST['schoollastattended']);
+        } else {
+            $schoolLastAttendedError = "School Last Attended is required";
+        }
+
+        if(!empty($_POST['schooladdress'])) {
+            $schoolAddress = dataValidation($_POST['schooladdress']);
+        } else {
+            $schoolAddressError = "School Address is required";
+        }
+
 
 
     }
