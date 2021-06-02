@@ -17,7 +17,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Sign Up: New Enrollee</title>
   </head>
   <body>
   <!-- Start Body -->
@@ -35,17 +35,17 @@
                 <span class="form-group col-md-2 text-center">Student Name:</span>
 
                 <div class="form-group col-md-3">
-                <input type="text" name="lastname" class="form-control">
+                <input type="text" name="lastname" class="form-control <?php echo (!empty($lastNameError)) ? 'border border-danger' : ''; ?>" value="<?php echo $lastName; ?>">
                 <label>Last Name</label>
                 </div>
 
                 <div class="form-group col-md-3">
-                <input type="text" name="firstname" class="form-control">
+                <input type="text" name="firstname" class="form-control <?php echo (!empty($firstNameError)) ? 'border border-danger' : ''; ?>" value="<?php echo $firstName; ?>">
                 <label">First Name</label>
                 </div>
 
                 <div class="form-group col-md-3">
-                <input type="text" name="middlename" class="form-control">
+                <input type="text" name="middlename" class="form-control <?php echo (!empty($middleNameError)) ? 'border border-danger' : ''; ?>" value="<?php echo $middleName; ?>">
                 <label>Middle Name</label>
                 </div>
             </div>
@@ -53,45 +53,41 @@
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">Email Address: </span>
                 <div class="form-group col-md-9">
-                <input type="email" name="email" class="form-control">
+                <input type="email" name="email" class="form-control" value="<?php echo $email; ?>" disabled>
                 </div>
             </div>
 
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">Home Address: </span>
                 <div class="form-group col-md-9">
-                <input type="text" name="homeaddress" class="form-control">
+                <input type="text" name="homeaddress" class="form-control <?php echo (!empty($homeAddressError)) ? 'border border-danger' : ''; ?>" value="<?php echo $homeAddress; ?>">
                 </div>
             </div>
 
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">Contact No: </span>
                 <div class="form-group col-md-4">
-                <input type="text" name="Contact Number" class="form-control">
+                <input type="text" name="contactnumber" class="form-control <?php echo (!empty($contactNumberError)) ? 'border border-danger' : ''; ?>" value="<?php echo $contactNumber; ?>">
                 </div>
 
                 <span class="form-group col-md-1 text-center">Birthday: </span>
                 <div class="form-group col-md-4">
-                <input type="date" name="birthday" class="form-control">
+                <input type="date" name="birthday" class="form-control <?php echo (!empty($birthdayError)) ? 'border border-danger' : ''; ?>" value="<?php echo $birthday; ?>">
                 </div>
             </div>
 
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">Birth Place: </span>
                 <div class="form-group col-md-4">
-                <input type="text" name="birthplace" class="form-control">
+                <input type="text" name="birthplace" class="form-control <?php echo (!empty($birthPlaceError)) ? 'border border-danger' : ''; ?>" value="<?php echo $birthPlace; ?>">
                 </div>
 
                 <span class="form-group col-md-1 text-center">Gender: </span>
-                <div class="form-check form-check-inline">
-                <p>Male</p>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions"value="option1">
-                </div>
-
-                <div class="form-check form-check-inline">
-                <p>Female</p>
-                <input class="form-check-input" type="radio" name="inlineRadioOptions"value="option1">
-                </div>
+                <select name="gender" class="form-select form-select-lg mb-8 <?php echo (!empty($genderError)) ? 'border border-danger' : ''; ?>">
+                    <option <?php if (isset($gender) && $gender =='Select Gender') echo "selected"; ?>>Select Gender</option>
+                    <option <?php if (isset($gender) && $gender == 'Male') echo "selected"; ?>> Male</option>
+                    <option <?php if (isset($gender) && $gender == 'Female') echo "selected";?> >Female</option>
+                </select>
             </div>
 
             <hr>
@@ -100,14 +96,14 @@
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">School Last Attended: </span>
                 <div class="form-group col-md-9">
-                <input type="email" class="form-control">
+                <input type="text" name="schoollastattended" class="form-control">
                 </div>
             </div>
 
             <div class="form-row">
                 <span class="form-group col-md-2 text-center">School Address: </span>
                 <div class="form-group col-md-9">
-                <input type="email" class="form-control">
+                <input type="text" name=""class="form-control">
                 </div>
             </div>
 
