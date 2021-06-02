@@ -1,6 +1,7 @@
 <?php
     require "database.php";
-    include "student-login-function.php";
+    include "student-signup-function.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -20,26 +21,36 @@
         <h3>Quezon City University</h3>
 
         <div class="container border p-3">
-            <!-- Log in Form -->
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" id="signupform">
+
                 <div class="form-group <?php echo (!empty($usernameError)) ? 'border border-danger' : ''; ?>">
                 <input type="text" class="form-control" name="Username" id="" placeholder="Username" value="<?php echo $username; ?>">
                 </div>
                 <p class="small text-danger"><?php echo $usernameError; ?></p>
 
                 <div class="form-group <?php echo (!empty($passwordError)) ? 'border border-danger' : ''; ?>">
-                <input type="password" class="form-control" name="Password" id="" placeholder="Password" value="<?php echo $password; ?>">
+                <input type="password" class="form-control " name="Password" id="" placeholder="Password" value="<?php echo $password; ?>">
                 </div>
                 <p class="small text-danger"><?php echo $passwordError; ?></p>
 
+                <div class="form-group <?php echo (!empty($repasswordError)) ? 'border border-danger' : ''; ?>">
+                <input type="password" class="form-control " name="rePassword" id="" placeholder="Confirm Password" value="<?php echo $repassword; ?>">
+                </div>
+                <p class="small text-danger"><?php echo $repasswordError; ?></p>
 
-                <a href="">Forgot password</a><br>
-                <button type="submit" name="login" class="btn btn-primary">Login</button>
+
+                <div class="form-group <?php echo (!empty($emailError)) ? 'border border-danger' : ''; ?>">
+                <input type="text" class="form-control" name="Email" id="" placeholder="Email" value="<?php echo $email; ?>">
+                </div>
+                <p class="small text-danger"><?php echo $emailError; ?></p>
+
+
+                <button type="submit" name="signup" class="btn btn-primary">Sign Up</button>
             </form>
-        </div>
 
         <div class="container border mt-3">
-            <p class="text-center pt-3">For new student:<a href="student-signup.php"> Sign Up</a></p>
+            <p class="text-center pt-3">Have created an account?<a href="index.php"> Login</a></p>
         </div>
     </div>
     
@@ -52,3 +63,5 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>   
 </body>
 </html>
+
+
